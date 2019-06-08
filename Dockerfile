@@ -12,5 +12,5 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app/ /app
 
-RUN adduser -D kwood
+RUN adduser -u 5001 -D kwood    
 USER kwood
