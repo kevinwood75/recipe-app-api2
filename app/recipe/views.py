@@ -45,7 +45,6 @@ class IngredientViewSet(viewsets.GenericViewSet,
                         mixins.ListModelMixin,
                         mixins.CreateModelMixin):
     """Manage ingredients in the database"""
-    ...
 
     def perform_create(self, serializer):
         """Create a new ingredient"""
