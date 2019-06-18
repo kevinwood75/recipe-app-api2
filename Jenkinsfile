@@ -16,7 +16,7 @@ node('appserver'){
     }
 
     stage('Release Container on Server'){
-        sh 'docker-compose up -d'
+        sh 'docker-compose up'
 
     }
 
