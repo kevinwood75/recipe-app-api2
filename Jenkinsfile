@@ -9,7 +9,7 @@ node('appserver'){
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerhub')]) {
            sh "docker login -u kwood475 -p ${dockerhub}"
         }
-        sh 'docker push kwood475/recipeappapi2_app:2.0.0'
+        sh 'docker push kwood475/recipeappapi2:latest'
         sh 'docker push kwood475/postgres:10-alpine'
     }
     stage('Remove old Container release'){
