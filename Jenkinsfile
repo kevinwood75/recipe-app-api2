@@ -10,7 +10,6 @@ node('appserver'){
            sh "docker login -u kwood475 -p ${dockerhub}"
         }
         sh 'docker push kwood475/recipeappapi_app:2.0.0'
-        sh 'docker push kwood475/postgres:10-alpine'
     }
     stage('Remove old Container release'){
         sh 'docker stop recipeappapi2_app_1'
