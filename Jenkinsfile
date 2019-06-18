@@ -12,10 +12,7 @@ node('appserver'){
         sh 'docker push kwood475/recipeappapi_app:2.0.0'
     }
     stage('Remove old Container release'){
-        sh 'docker stop recipeappapi2_app_1'
-        sh 'docker stop recipeappapi2_db_1'
-        sh 'docker rm recipeappapi2_app_1'
-        sh 'docker rm recipeappapi2_db_1'
+        sh 'docker-compose down'
     }
 
     stage('Release Container on Server'){
