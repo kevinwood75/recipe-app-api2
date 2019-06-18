@@ -18,7 +18,8 @@ node('appserver'){
     }
 
     stage('Release Container on Server'){
-        sh 'docker-compose up -d --build'
+        sh 'ls -lrt'
+        sh 'docker-compose up --build'
 
     }
 
