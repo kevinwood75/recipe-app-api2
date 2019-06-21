@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 ###    }
 ###}
 
-DATABASE = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'HOST': '192.168.2.241',
