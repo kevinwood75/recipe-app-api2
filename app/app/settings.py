@@ -97,9 +97,9 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASE = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '192.168.2.148',
+        'HOST': '192.168.2.241',
         'NAME': 'recipe',
-        'USER': 'recipe_user',
+        'USER': 'recipe',
         'PASSWORD': 'jandrew28',
     }
 }
