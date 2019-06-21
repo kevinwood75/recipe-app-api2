@@ -1,4 +1,4 @@
-node('appserver'){
+node('rasp'){
     stage('Git Checkout'){
         git credentialsId: 'kevinwood75', url: 'https://github.com/kevinwood75/recipe-app-api2.git', branch: 'master'
     }
