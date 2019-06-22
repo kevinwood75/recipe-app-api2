@@ -1,4 +1,6 @@
 node('appserver'){
+    notifyStarted()
+
     stage('Git Checkout'){
         git credentialsId: 'kevinwood75', url: 'https://github.com/kevinwood75/recipe-app-api2.git', branch: 'master'
     }
@@ -22,4 +24,10 @@ node('appserver'){
 
     }
 
+}
+
+
+def notifyStarted() {
+  // send to Slack
+  slackSend (color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
 }
