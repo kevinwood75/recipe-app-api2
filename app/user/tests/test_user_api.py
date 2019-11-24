@@ -98,9 +98,9 @@ class PrivateUserApiTests(TestCase):
 
     def setUp(self):
         self.user = create_user(
-            email='test@londonappdev.com',
-            password='testpass',
-            name='fname',
+            email='test2008@gmail.com',
+            password='jandrew0475',
+            name='Test2008 Wood',
         )
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
@@ -112,7 +112,7 @@ class PrivateUserApiTests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, {
             'name': self.user.name,
-            'email': self.user.email,
+            'email': self.user.email
         })
 
     def test_post_me_not_allowed(self):
