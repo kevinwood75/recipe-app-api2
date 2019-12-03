@@ -26,7 +26,7 @@ node('appserver'){
     }
 
     stage('Aqua Micro scanner'){
-        aquaMircoscanner imageName: 'recipeappapi_app_1', notCompliesCmd: 'exit 1', onDisallowed: 'fail'
+        aquaMaquaMicroscanner  imageName: 'recipeappapi_app_1', notCompliesCmd: 'exit 1', onDisallowed: 'fail'
     }
     notifySuccessful()
   } catch (e) {
