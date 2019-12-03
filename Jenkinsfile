@@ -23,7 +23,10 @@ node('appserver'){
 
     stage('Release Container on Server'){
         sh 'docker-compose up -d'
+    }
 
+    stage('Aqua Micro scanner'){
+        aquaMircoscanner imageName: 'recipeappapi_app_1', notCompliesCmd: 'exit 1', onDisallowed: 'fail'
     }
     notifySuccessful()
   } catch (e) {
