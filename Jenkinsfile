@@ -21,16 +21,10 @@ node('appserver'){
         sh 'docker push kwood475/recipeappapi_app:2.0.0'
     }
 
-#    stage('Aqua container scanner'){
-#        sh 'docker run --rm -v /var/tmp/cache:/root/.cache/ aquasec/trivy  --exit-code 1 --severity MEDIUM,HIGH  kwood475/recipeappapi_app:2.0.0'    
-#    }
-
-
     stage('Release Container on Server'){
         sh 'docker-compose up -d'
     }
-
-
+    
     notifySuccessful()
   } catch (e) {
       currentBuild.result = "FAILED"
